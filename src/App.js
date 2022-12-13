@@ -53,11 +53,6 @@ class App extends Component {
           className={ 'search-box' }
           onChangeHandler={ onSearchChange }
           placeholder={ 'Search Monsters' }/>
-        {/* <input
-          className='search-box' 
-          type='search' 
-          placeholder='Search monsters' 
-          onChange={ onSearchChange }/> */}
         <CardList monsters={ filteredMonsters }/>
       </div>
     );
