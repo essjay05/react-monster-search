@@ -8,13 +8,10 @@ class CardList extends Component {
     const { monsters } = this.props
     return (
       <div>
-        I'm a card-list component
         {
           monsters.map((monster) => {
             return (
-              <div key={ monster.id }>
-                <h1>{ monster.name }</h1>
-              </div>
+              <h1 key={ monster.id }>{ monster.name }</h1>
             )
           })
         }
