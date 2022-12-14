@@ -9,8 +9,9 @@ const App = () => {
 
   const [searchTerm, setSearchTerm] = useState('')
   const [monsters, setMonsters] = useState([])
+  const [title, setTitle] = useState('Monsters Rolodex')
   const [filteredMonsters, setFilteredMonsters] = useState(monsters)
-  console.log(searchTerm)
+  console.log('rendered')
 
   useEffect(() => {
     console.log('effect')
@@ -32,13 +33,23 @@ const App = () => {
     setSearchTerm(searchTermString)
   }
 
+  const onTitleChange = (event) => {
+    const setTitleString = event.target.value.toLowerCase()
+    setTitle(setTitleString)
+  }
+
   return (
     <div className='App'>
-      <h1 className='app-title'>Monsters Rolodex</h1>
+      <h1 className='app-title'>{title}</h1>
       <SearchBox
         className={ 'monsters-search-box' }
         onChangeHandler={ onSearchChange }
         placeholder={ 'Search Monsters' }/>
+      <br/>
+      <SearchBox
+        className={ 'title-search-box' }
+        onChangeHandler={ onTitleChange }
+        placeholder={ 'Set title' }/>
       <CardList monsters={ filteredMonsters }/>
     </div>
   )
